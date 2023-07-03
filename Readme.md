@@ -53,7 +53,10 @@ Este proyecto está bajo la Licencia MIT. Puedes consultar el archivo [LICENSE](
     1. Registro: Información personal
         - Nombre
         - Edad
-        - Genero
+        - Género
+        - Email
+        - Nombre del profesional de la salud
+        - Email del profesional
 
     2. Configuración Inicial: Preferencias Y Objetivo Personal
         - Frecuencia de los Recordatorios para los Registros (Cada X horas, Diario, Semanal) (A traves de correo electronico con enlace al registro)
@@ -66,7 +69,7 @@ Este proyecto está bajo la Licencia MIT. Puedes consultar el archivo [LICENSE](
 
 ## Usuario Existente => Accede al Dashboard
 
-    ## Opción 1 - Registrar Estado
+    ## Opción - Registrar Estado
         
         - Seleccionar Emoción:
             - Amor
@@ -100,16 +103,34 @@ Este proyecto está bajo la Licencia MIT. Puedes consultar el archivo [LICENSE](
             - ¿Sed?
             - ¿Cansancio?
         - Seleccionar que va a hacer a continuación:
-            Opción 1 - Plan de choque
-            Opción 2 - Evasión
+            Opción 1 - Plan de choque 
+                => Elegir Plan de Choque
+            Opción 2 - Dependencia / Addicion
+                => Elegir Dependencia / Addicion
             Opción 3 - Nada
+
+    ## Opción - Mi Plan de Choque
+            Seleccionar planes de choque de entre los predefinidos.
+            - Meditación
+            - Deportes
+            - Apoyo Social
+            Crear plan de choque personal.
+            Eliminar plan de Mis Planes de Choque.
         
 
-    ## Opción 2 - Monitoreo de los sintomas y practicas de choque Visualizadas en Gráficas.
-    
+    ## Opción - Informes.
         - Mostrar emociones registradas en X tiempo (Día, Semana, Mes, Año)
         - Mostrar X emoción (Solo en las negativas) => Mostrar junto a su Plan de choque y/o evasión correspondiente (Día, Semana, Mes, Año)
-        - 
+        - Enviar Informe al profesional.
+        
+    ## Opcion - Recursos y consejos de Ayuda
+        - Ver hoja de ruta establecida por el profesional (Si lo hubiera)
+        - Recursos y videos de autoayuda
+
+    ## Opción - Logros - El usuario podra ver su progreso para motivarse.
+        - Grafico circular que muestre cuanto se han AUMENTADO las BUENAS emociones desde que empezó. Desde 0% a 100%
+        - Grafico circular que muestre cuanto se han REDUCIDO las MALAS emociones desde que empezó. Desde 100% a 0% (Menos es Mejor en las Malas)
+        - Grafico circular que muestre cuanto se han REDUCIDO las DEPENDENCIAS /ADICCIONES desde que empezó. Desde 100% a 0% (Menos es Mejor en las Malas)
 
 
 
