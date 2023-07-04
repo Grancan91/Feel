@@ -60,12 +60,13 @@ Este proyecto está bajo la Licencia MIT. Puedes consultar el archivo [LICENSE](
 
     2. Configuración Inicial: Preferencias Y Objetivo Personal
         - Frecuencia de los Recordatorios para los Registros (Cada X horas, Diario, Semanal) (A traves de correo electronico con enlace al registro)
-        - Seleccionar Objetivo Personal
-            - Reduccion del Estres y Ansiedad
-            - Autocuidado
-            - Autoestima
-            - Resiliencia
-            - Identificar Patrones Emocionales
+       ##########     - Seleccionar Objetivo Personal
+       ##########     - Reduccion del Estres y Ansiedad
+       ##########     - Autocuidado
+       ##########     - Autoestima
+       ##########     - Resiliencia
+       ##########     - Identificar Patrones Emocionales
+        
 
 ## Usuario Existente => Accede al Dashboard
 
@@ -79,7 +80,6 @@ Este proyecto está bajo la Licencia MIT. Puedes consultar el archivo [LICENSE](
             - Miedo
             - Sorpresa
             - Asco
-            - Envidia
             - Vergüenza
             - Culpa
         
