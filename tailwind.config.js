@@ -3,7 +3,8 @@ export default {
   darkMode: "class",
   content: [
     './src/tailwind.css',
-    './src/Pages/Welcome.jsx'
+    './src/Pages/Welcome/Welcome.jsx',
+    './src/Pages/Signup/Singup.jsx'
   ],
   theme: {
     extend: {
