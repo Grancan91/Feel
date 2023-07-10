@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Login.css'
 import { useNavigate } from 'react-router-dom'
 import { isEmail, isPassword, styleEmail, styleName, stylePassword } from '../../Services/validations_service'
+import { userLogin } from '../../Services/auth_service'
 
 
 function Signup() {
@@ -34,12 +35,12 @@ function Signup() {
       }
 
     } catch (error) {
-      
+      return error
     }
   }
   
   return (
-    <div className='w-screen flex flex-col my-2 items-center'>
+    <div className='w-screen h-screen flex flex-col justify-center items-center'>
       <div className='p-4 lg:w-3/5 md:p-8'>
         <h1 className='text-2xl p-2 md:text-5xl md:p-8 text-center'>Welcome Back</h1>
 

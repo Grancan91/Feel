@@ -44,12 +44,12 @@ function Signup() {
         navigate('/login')
       }
     } catch (error) {
-      
+
     }
   }
   
   return (
-    <div className='w-screen flex flex-col my-2 items-center'>
+    <div className='w-screen h-screen flex flex-col justify-center items-center'>
       <div className='p-4 lg:w-3/5 md:p-8'>
         <h1 className='text-2xl p-2 md:text-5xl md:p-8 text-center'>Create New Account</h1>
 
@@ -58,7 +58,7 @@ function Signup() {
           <div className="h-40 md:h-full bg-cover bg-center rounded-lg" style={{ backgroundImage: 'url("../../src/assets/feeling.jpg")' }}>
           </div>
           {/* Column 2 */}
-          <div className="border border-gray-light rounded-lg p-2 md:p-8">
+          <div className="shadow-2xl rounded-lg p-2 md:p-8">
             <h2 className='text-center text-lg my-2 md:text-2xl'>Personal Data</h2>
             {/* Form */}
             <form action="" className=''>
@@ -87,7 +87,7 @@ function Signup() {
 
             </form>
 
-        <button className='w-full antialiased bg-blue-dark rounded-full inline-block p-6 py-3 my-4 text-white'
+        <button className='w-full antialiased bg-blue-dark rounded-full inline-block p-6 py-3 my-4 text-white  hover:bg-blue'
           onClick={handleForm}>
           SignUp</button>
           </div>
