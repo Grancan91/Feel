@@ -1,7 +1,13 @@
 import React from 'react'
 import './Welcome.css'
+import { Link } from 'react-router-dom';
 
 function Welcome() {
+
+  const handleClick = () => {
+    
+  }
+
   return (
     <>
     {/* Container */}
@@ -32,7 +38,9 @@ function Welcome() {
           <p className="antialiased text-gray">Collaborate with your healthcare provider to actively participate in your own well-being</p>
           </div>
         </div>
+      <Link to={'/signup'}>
       <button className='antialiased bg-blue-dark rounded-full inline-block p-6 py-3 text-white'>Go Loggin</button>
+      </Link>
     </div>
     </>
   )
