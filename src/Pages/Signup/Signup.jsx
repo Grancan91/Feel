@@ -1,31 +1,49 @@
 import React from 'react'
+import './Signup.css'
+import { Link } from 'react-router-dom'
 
 function Signup() {
   return (
-    
-    <div className='flex flex-col w-full justify-center items-center'>
+    <div className='w-screen flex flex-col my-2 items-center'>
+    <div className='p-4 lg:w-3/4 md:p-8'>
+        <h1 className='text-2xl p-2 md:text-5xl md:p-8 text-center'>Create New Account</h1>
 
-          <h1 className="antialiased my-4 mx-12 text-4xl font-bold mb-2 md:mx-2">Create a new account</h1>
-    <div className="flex columns-2 gap-4 p-6 text-center">
-      {/* Card Container */}
-          {/* Card 1 */}
-          <div className="p-6 rounded-lg cursor-pointer md:p-1 lg:p-6">
-          <div className="bg-cover bg-center h-96 w-96 rounded-2xl czursor-pointer" style={{ backgroundImage: 'url("../../src/assets/emotion-brain.jpg")' }}></div>  
-          <p className="antialiased text-gray">Develop the ability to identify and uners. </p>
-          </div>
-          {/* Card 2 */}
-          <div className="p-6 rounded-lg cursor-pointer md:p-1 lg:p-6">
-            <div class="mb-3">
-                <label for="email" className="text-sm text-navy-700 dark:text-white font-bold">Your Name</label>
-                <input type="text" id="name" placeholder="Pepito Palotes" className=""/>
-            </div>
-          <p className="antialiased text-gray">Develop the ability to identify and uners. </p>
-          </div>
-  </div>  
-    
+      <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
+      {/* Column 1 */}
+        <div className="h-40 md:h-full bg-cover bg-center rounded-lg" style={{ backgroundImage: 'url("../../src/assets/feeling.jpg")' }}>
+        </div>       
+      {/* Column 2 */}
+        <div className="border border-gray-light rounded-lg p-2 md:p-4">
+        <h2 className='text-center text-lg my-2 md:text-2xl'>Personal Data</h2>
+      {/* Form */}
+        <form action="" className=''>
+
+          <label htmlFor="" className='text-lg text-gray md:text-2xl antialiased'>Name</label>
+          <input type="text" className='w-full border border-gray-light p-2 md:p-4 rounded-md my-2' />
+
+          <label htmlFor="" className='text-lg text-gray md:text-2xl antialiased'>Age</label>
+          <input type="text" className='w-full border border-gray-light p-2 md:p-4 rounded-md my-2' />
+
+          <label htmlFor="" className='text-lg text-gray md:text-2xl antialiased'>Email</label>
+          <input type="text" className='w-full border border-gray-light p-2 md:p-4 rounded-md my-2' />
+
+          <label htmlFor="" className='text-lg text-gray md:text-2xl antialiased'>Password</label>
+          <input type="text" className='w-full border border-gray-light p-2 md:p-4 rounded-md my-2' />
+
+          <h2 className='text-center my-2 text-lg md:text-2xl'>Would you like to send the reports?</h2>
+
+          <label htmlFor="" className='text-lg text-gray md:text-2xl antialiased'>Email of Health Profesional</label>
+          <input type="text" className='w-full border border-gray-light p-2 md:p-4 rounded-md my-2' />
+
+        </form>
+      
+      </div>
     </div>
-    
-        
+    </div>
+      <Link to={'/signup'}>
+        <button className='antialiased bg-blue-dark rounded-full inline-block p-6 py-3 text-white'>Go Loggin</button>
+      </Link>
+    </div>
   )
 }
 

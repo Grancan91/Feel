@@ -1,11 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: "class",
-  content: [
-    './src/tailwind.css',
-    './src/Pages/Welcome/Welcome.jsx',
-    './src/Pages/Signup/Singup.jsx'
-  ],
+  content: ["./src/**/*.{html,js,jsx}"],
   theme: {
     extend: {
       colors: {
