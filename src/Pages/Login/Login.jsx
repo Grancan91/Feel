@@ -29,8 +29,10 @@ function Signup() {
 
   const doLogin = async () => {
     try {
-      //await userLogin(email, password)
-     //navigate('/dashboard')
+      if(await userLogin(email, password)){
+        navigate('/dashboard')
+      }
+
     } catch (error) {
       
     }
@@ -46,7 +48,7 @@ function Signup() {
           <div className="h-40 md:h-full bg-cover bg-center rounded-lg" style={{ backgroundImage: 'url("../../src/assets/emotion-brain.jpg")' }}>
           </div>
           {/* Column 2 */}
-          <div className="border border-gray-light rounded-lg p-2 md:p-4">
+          <div className="border border-gray-light rounded-lg p-2 md:p-8">
             <h2 className='text-center text-lg my-2 md:text-2xl'>Your Login Data</h2>
             {/* Form */}
             <form action="" className=''>
@@ -61,7 +63,7 @@ function Signup() {
 
         <button className='w-full antialiased bg-blue-dark rounded-full inline-block p-6 py-3 my-4 text-white'
           onClick={handleForm}>
-          SignUp</button>
+          Login</button>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import { createBrowserRouter, redirect } from 'react-router-dom'
 import Welcome from '../Pages/Welcome/Welcome'
 import Signup from '../Pages/Signup/Signup'
 import Login from '../Pages/Login/Login'
+import Intro1 from '../Pages/Intro1/Intro1'
 
 export const router = createBrowserRouter([
     {
@@ -12,10 +13,14 @@ export const router = createBrowserRouter([
         path: '/signup',
         element: <Signup/>
     },
-  {
-    path: '/login',
-    element: <Login />
-  },
+    {
+      path: '/login',
+      element: <Login />
+    },
+    {
+      path: '/intro1',
+      element: <Intro1 />
+    },
 
  /*    {
       path: '/',

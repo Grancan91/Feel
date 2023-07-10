@@ -40,8 +40,9 @@ function Signup() {
 
   const doSignup = async () => {
     try {
-      await userSignup(name, age, email, password, proEmail)
-     //navigate('/login')
+      if(await userSignup(name, age, email, password, proEmail)){
+        navigate('/login')
+      }
     } catch (error) {
       
     }
@@ -57,7 +58,7 @@ function Signup() {
           <div className="h-40 md:h-full bg-cover bg-center rounded-lg" style={{ backgroundImage: 'url("../../src/assets/feeling.jpg")' }}>
           </div>
           {/* Column 2 */}
-          <div className="border border-gray-light rounded-lg p-2 md:p-4">
+          <div className="border border-gray-light rounded-lg p-2 md:p-8">
             <h2 className='text-center text-lg my-2 md:text-2xl'>Personal Data</h2>
             {/* Form */}
             <form action="" className=''>

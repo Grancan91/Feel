@@ -13,7 +13,20 @@ export const userSignup = async (name, age, email, password, pro_email) => {
         localStorage.setItem('token', data.token)
         return true
     } catch (err) {
-        console.log(data.error)
-        return err.code
+
+        return err
+    }
+}
+
+export const userLogin = async (email, password) => {
+    try {
+        const { data } = await api.post('/auth/login', { email, password })
+        localStorage.setItem('token', data.userDetails.token)
+        localStorage.setItem('name', data.userDetails.name)
+        localStorage.setItem('email', data.userDetails.email)
+        localStorage.setItem('id', data.userDetails.id)
+        return true
+    } catch (err) {
+        return false
     }
 }
