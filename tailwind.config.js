@@ -11,6 +11,8 @@ export default {
       'oldgray': '#8492a6',
       'gray': '#6B7280',      
       'gray-light': '#d3dce6',
+      'green':'#34B53A',
+        'red':'#FF6B5F'
     },},
   },
   plugins: [],

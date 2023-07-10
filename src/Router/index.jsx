@@ -1,7 +1,7 @@
 import { createBrowserRouter, redirect } from 'react-router-dom'
 import Welcome from '../Pages/Welcome/Welcome'
 import Signup from '../Pages/Signup/Signup'
-
+import Login from '../Pages/Login/Login'
 
 export const router = createBrowserRouter([
     {
@@ -12,6 +12,10 @@ export const router = createBrowserRouter([
         path: '/signup',
         element: <Signup/>
     },
+  {
+    path: '/login',
+    element: <Login />
+  },
 
  /*    {
       path: '/',
