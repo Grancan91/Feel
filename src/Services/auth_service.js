@@ -9,9 +9,12 @@ export const userSignup = async (name, age, email, password, pro_email) => {
             password: password,
             pro_email: pro_email,
         })
-        console.log(data)
-        localStorage.setItem('token', data.token)
-        return true
+        if (data.code === 11000) {
+            return data            
+        } else {
+            localStorage.setItem('token', data.token)
+            return true
+        }
     } catch (err) {
 
         return err

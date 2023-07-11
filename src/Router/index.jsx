@@ -3,6 +3,7 @@ import Welcome from '../Pages/Welcome/Welcome'
 import Signup from '../Pages/Signup/Signup'
 import Login from '../Pages/Login/Login'
 import Intro1 from '../Pages/Intro1/Intro1'
+import Intro2 from '../Pages/Intro2/Intro2'
 
 export const router = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
       path: '/intro1',
       element: <Intro1 />
     },
+  {
+    path: '/intro2',
+    element: <Intro2 />
+  },
 
  /*    {
       path: '/',

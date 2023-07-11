@@ -133,7 +133,30 @@ Este proyecto está bajo la Licencia MIT. Puedes consultar el archivo [LICENSE](
         - Grafico circular que muestre cuanto se han REDUCIDO las DEPENDENCIAS /ADICCIONES desde que empezó. Desde 100% a 0% (Menos es Mejor en las Malas)
 
 
+# Welcome - Ok
+# Signup
+    - Page - Ok
+    - DB Conecction - Ok
+    - Validation - ok
+# Login
+    - Page - Ok
+    - DB Conecction - pk
+    - Validation - ok
+# Intro 1
+    - Page
+    - DB Connection
+    - CheckAuth
+# Intro 2
+    - Page
+    - DB Connection
+    - CheckAuth
+
+## - Signup -> Redirige al Dashboard
+Si las Validations estan ok, pasa de pagina aunque la respuesta del servidor sea Nula.
+
+Si el usuario ya existe mostrar error usuario existente.
 
 
+## - Login Validations 
 
-
+    Tendria que redirigir al dashboard si tiene los reminders establecidos

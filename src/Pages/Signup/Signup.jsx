@@ -10,8 +10,10 @@ function Signup() {
   const [name, setName] = useState('')
   const [age, setAge] = useState('')
   const [email, setEmail] = useState('')
+  const [emailLabel, setEmailLabel] = useState('Email*')
   const [password, setPassword] = useState('')
   const [proEmail, setProEmail] = useState('')
+
 
   const handleName = (e) => {
     setName(e.target.value)
@@ -22,6 +24,7 @@ function Signup() {
   }
 
   const handleEmail = (e) => {
+    setEmailLabel('Email*')
     setEmail(e.target.value)
   }
 
@@ -40,11 +43,18 @@ function Signup() {
 
   const doSignup = async () => {
     try {
-      if(await userSignup(name, age, email, password, proEmail)){
-        navigate('/login')
+      const res = await userSignup(name, age, email, password, proEmail)
+      
+      if (res.code === 11000){
+        setEmailLabel(res.error)
+        setEmail(res)
+      } else if (res){
+        //si el usuario tiene los Reminders Establecidos saltar intros
+        navigate('/intro1')
       }
+      
     } catch (error) {
-
+      console.log(`doSignup Error ${error}`)
     }
   }
   
@@ -71,7 +81,7 @@ function Signup() {
               <input type="number" value={age} max='100' className='w-full border border-gray-light p-2 md:p-4 rounded-md my-2'
                 onChange={handleAge} />
 
-              <label htmlFor="" className='text-lg text-gray md:text-2xl antialiased'>Email *</label>
+              <label htmlFor="" className='text-lg text-gray md:text-2xl antialiased'>{`${emailLabel}`}</label>
               <input type="text" className={`w-full border border-gray-light p-2 md:p-4 rounded-md my-2 ${styleEmail(email)}`}
                 onChange={handleEmail} />
 
@@ -90,6 +100,9 @@ function Signup() {
         <button className='w-full antialiased bg-blue-dark rounded-full inline-block p-6 py-3 my-4 text-white  hover:bg-blue'
           onClick={handleForm}>
           SignUp</button>
+            <Link to={'/login'}>
+            <p className='text-center underline cursor-pointer'>Have account? Login here.</p>
+            </Link>
           </div>
         </div>
       </div>
