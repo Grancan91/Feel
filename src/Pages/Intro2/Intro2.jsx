@@ -1,6 +1,28 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import { updateReminder } from '../../Services/user_service'
 
 function Intro2() {
+
+    const navigate = useNavigate()
+
+    const handleMorning = () => {
+        localStorage.setItem('reminder_time', '9:00')
+        updateReminder(localStorage.getItem('reminder_freq'), localStorage.getItem('reminder_time'))
+        navigate('/dashboard')
+    }
+
+    const handleAfternoon = () => {
+        localStorage.setItem('reminder_time', '15:00')
+        updateReminder(localStorage.getItem('reminder_freq'), localStorage.getItem('reminder_time'))
+        navigate('/dashboard')
+    }
+
+    const handleNight = () => {
+        localStorage.setItem('reminder_time', '21:00')
+        updateReminder(localStorage.getItem('reminder_freq'), localStorage.getItem('reminder_time'))
+        navigate('/dashboard')
+    }
     return (
         <>
             {/* Title and Cards Container */}   
@@ -24,21 +46,21 @@ function Intro2() {
                 <div className="grid grid-cols-1 gap-4 p-6 md:grid-cols-3 md:p-4 md:mx-8 lg:mx-32 text-center">
 
                     {/* Card 1 */}
-                    <div className="p-6 rounded-lg cursor-pointer md:p-1 lg:p-6 hover:border" onClick={() => { console.log('cliiiiick') }}>
+                    <div className="p-6 rounded-lg cursor-pointer md:p-1 lg:p-6 hover:border" onClick={handleMorning}>
                         <div className="bg-cover bg-top h-96 rounded-lg md:h-48 lg:h-96" style={{ backgroundImage: 'url("../../src/assets/morning.jpg")' }}></div>
                         <h2 className="antialiased my-4 mx-12 text-xl font-bold mb-2 md:mx-2">Morning</h2>
                         <button className='antialiased  hover:bg-blue bg-blue-dark rounded-full inline-block p-6 my-4 py-3 text-white'>Select</button>
                     </div>
 
                     {/* Card 2 */}
-                    <div className="p-6 rounded-lg cursor-pointer md:p-1 lg:p-6 hover:border">
+                    <div className="p-6 rounded-lg cursor-pointer md:p-1 lg:p-6 hover:border" onClick={handleAfternoon}>
                         <div className="bg-cover bg-top h-96 rounded-2xl md:h-48 lg:h-96 cursor-pointer" style={{ backgroundImage: 'url("../../src/assets/afternoon.jpg")' }}></div>
                         <h2 className="antialiased my-4 mx-12 text-xl font-bold mb-2 md:mx-2">Afternoon</h2>
                         <button className='antialiased  hover:bg-blue bg-blue-dark rounded-full inline-block p-6 my-4 py-3 text-white'>Select</button>
                     </div>
                     
                     {/* Card 3 */}
-                    <div className="p-6 rounded-lg cursor-pointer md:p-1 lg:p-6 hover:border">
+                    <div className="p-6 rounded-lg cursor-pointer md:p-1 lg:p-6 hover:border" onClick={handleNight}>
                         <div className="bg-cover bg-top h-96 rounded-2xl md:h-48 lg:h-96 cursor-pointer" style={{ backgroundImage: 'url("../../src/assets/night.jpg")' }}></div>
                         <h2 className="antialiased my-4 mx-12 text-xl font-bold mb-2 md:mx-2">Night</h2>
                         <button className='antialiased bg-blue-dark  hover:bg-blue rounded-full inline-block p-6 my-4 py-3 text-white'>Select</button>

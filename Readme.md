@@ -136,20 +136,20 @@ Este proyecto está bajo la Licencia MIT. Puedes consultar el archivo [LICENSE](
 # Welcome - Ok
 # Signup
     - Page - Ok
-    - DB Conecction - Ok
+    - Functionality - Ok
     - Validation - ok
 # Login
     - Page - Ok
-    - DB Conecction - pk
+    - Functionality - ok
     - Validation - ok
 # Intro 1
-    - Page
-    - DB Connection
-    - CheckAuth
+    - Page - ok
+    - Functionality - ok
+    - CheckAuth - ok
 # Intro 2
-    - Page
-    - DB Connection
-    - CheckAuth
+    - Page - ok
+    - Functionality - ok
+    - CheckAuth - ok
 
 ## - Signup -> Redirige al Dashboard
 Si las Validations estan ok, pasa de pagina aunque la respuesta del servidor sea Nula.

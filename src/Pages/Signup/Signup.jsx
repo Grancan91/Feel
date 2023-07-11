@@ -49,7 +49,6 @@ function Signup() {
         setEmailLabel(res.error)
         setEmail(res)
       } else if (res){
-        //si el usuario tiene los Reminders Establecidos saltar intros
         navigate('/intro1')
       }
       

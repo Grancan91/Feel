@@ -4,27 +4,19 @@ import { Link, useNavigate } from 'react-router-dom'
 function Intro1() {
 
     const navigate = useNavigate()
-    const [reminderDay, setReminderDay] = useState('')
 
     const handleDay = () => {
-        setReminderDay(1)
-        //Aqui servicio guardar ReminderDay
-
+        localStorage.setItem('reminder_freq', 1)
         navigate('/intro2')
-
     }
 
     const handleWeek = () => {
-        setReminderDay(7)
-        //Aqui servicio guardar ReminderDay
-
+        localStorage.setItem('reminder_freq', 7)
         navigate('/intro2')
     }
 
     const handleMonth = () => {
-        setReminderDay(30)
-        //Aqui servicio guardar ReminderDay
-
+        localStorage.setItem('reminder_freq', 30)
         navigate('/intro2')
     }
 

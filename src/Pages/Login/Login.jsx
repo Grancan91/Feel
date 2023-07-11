@@ -18,19 +18,14 @@ function Signup() {
 
   const handleEmail = (e) => {
     setEmail(e.target.value)
-
   }
 
   const handlePassword = (e) => {
-
     setPassword(e.target.value)
   }
 
-
   const handleForm = (e) => {
-
     doLogin()
-
   }
 
   const doLogin = async () => {
@@ -39,17 +34,18 @@ function Signup() {
 
       if (res) {
         setErrorLabel('')
-        navigate('/intro1')
-
+        const hasReminder = localStorage.getItem('reminder_freq')
+        if(hasReminder !== '0'){
+          navigate('/dashboard')
+        } else {
+          navigate('/intro1')
+        }
         //si el usuario tiene los Reminders Establecidos saltar intros
+        //Servicio que devuelva true o false si tiene esos datos
         //navigate('/dashboard')
-
       } else {
         setErrorLabel('Email or Password incorrect')
       }
-
-
-
     } catch (error) {
       return error
     }
@@ -82,7 +78,7 @@ function Signup() {
             <button className='w-full antialiased bg-blue-dark rounded-full inline-block p-6 py-3 my-4 text-white'
               onClick={handleForm}>
               Login</button>
-            <Link to={'/login'}>
+            <Link to={'/signup'}>
               <p className='text-center underline cursor-pointer'>Dont have account? Signup.</p>
             </Link>
           </div>
