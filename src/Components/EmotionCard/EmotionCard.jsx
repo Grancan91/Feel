@@ -28,7 +28,7 @@ function EmotionCard({ selector, handleEmotion }) {
 
     return (
         <>
-            <div className='w-1/6 border md:p-2 rounded-2xl hover:bg-green-light' onClick={handleClick}>
+            <div className='w-1/6 cursor-pointer border border-gray-light md:p-2 rounded-2xl hover:bg-green-light' onClick={handleClick}>
             <h3 className='text-center md:text-4xl dark:text-gray-dark'>Happy</h3>
                 <img src={IMG[selector]} alt="" />
         </div>

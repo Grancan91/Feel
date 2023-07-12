@@ -36,7 +36,7 @@ function Signup() {
         setErrorLabel('')
         const hasReminder = localStorage.getItem('reminder_freq')
         if(hasReminder !== '0'){
-          navigate('/dashboard')
+          navigate('/dashboard/home')
         } else {
           navigate('/intro1')
         }
