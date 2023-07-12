@@ -1,3 +1,5 @@
+import { light } from '@mui/material/styles/createPalette'
+
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: "class",
@@ -13,11 +15,11 @@ export default {
         "gray-light": "#d3dce6",
         "background-light": "#F5F5F5",
         green: "#34B53A",
-        red: "#FF6B5F",
+        "green-light":"#81c784",
+        "red": "#FF6B5F",
       },
       backgroundImage: {
         "happy": "url('https://openmoji.org/data/color/svg/1F600.svg')",
-        "footer-texture": "url('/img/footer-texture.png')",
       },
     },
   },
