@@ -43,16 +43,15 @@ function CauseList() {
                 {/*ListContainer*/}
                 <div>
                     {/*List-Item*/}
-                    <div className='flex justify-between p-4 border border-green cursor-pointer hover:bg-green-light'>
-                        {arrCauses.map((cause)=>{
-                        <>
-                        {console.log('concha')}
-                        <p>{cause}</p>
-                        <input type="checkbox" id="" name="" value="" checked/>
-                        </>
-                    })}
-                    </div>
-                
+                    {causes.map((cause) => (
+                        <div
+                            key={cause.id} // Assuming each cause object has a unique 'id' property
+                            className="flex justify-between p-4 border border-green cursor-pointer hover:bg-green-light"
+                        >
+                            <p>{cause.name}</p>
+                            <input type="checkbox" id={cause.id} name={cause.name} value={cause.value} checked />
+                        </div>
+                    ))}
                 </div>
         </div>
         </>
