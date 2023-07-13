@@ -8,15 +8,7 @@ function ListCard({ ListOf, handleData }) {
     const [listItem, setListItem] = useState([])
     const [selectedItem, setSelectedItem] = useState([])
 
-    // 1. Listar causas, Sintomas y Estrategias en la bd segun el tipo de 
-    // List que queremos cargar (Pasar por props)
-    // 2. Al Seleccionar Causa
-    //Guardar en array Selected
-    //Aplicar Estilo Selected
-
-    // Opción 2:  Enviar Array de elementos seleccionados al padre.
-    //Llamar al servicio en el padre.
-
+    //Enviar Array de elementos seleccionados al padre.
 
     const LIST = {
         'Causes': loadCauses(),
@@ -31,26 +23,24 @@ function ListCard({ ListOf, handleData }) {
 
     useEffect(() => {
         loadList()
-    }, [])
+        handleData(selectedItem)
+    }, [selectedItem])
 
     const handleCheck = (item) => {
-        //Add to selectedItem when click.
-        //If allready exist, delete from selectedItem
-        if (selectedItem.indexOf(item) === -1) {
-            setSelectedItem([...selectedItem, item])
-            return false
+        //Add to selectedItem when click
+        if (selectedItem.indexOf(item._id) === -1) {
+            setSelectedItem([...selectedItem, item._id])
         } else {
+            //If allready exist, delete from selectedItem
             const arr = [...selectedItem]
-            arr.splice(arr.indexOf(item), 1)
+            arr.splice(arr.indexOf(item._id), 1)
             setSelectedItem(arr)
-            return true
         }
     }
-
+    //Add a new Cause/Symptom/Emotion
     const handleButton = () => {
-        console.log(selectedItem)
-    }
 
+    }
 
     return (
         <>
@@ -64,11 +54,11 @@ function ListCard({ ListOf, handleData }) {
                     {listItem.map((item, index) => (
                         <div
                             key={index} // Assuming each cause object has a unique 'id' property
-                            className={`flex justify-between p-4 my-2 cursor-pointer hover:bg-green-light ${selectedItem.includes(item) ? 'border rounded-lg border-green' : ''}`}
+                            className={`flex justify-between p-4 my-2 cursor-pointer hover:bg-green-light ${selectedItem.includes(item._id) ? 'border rounded-lg border-green bg-lime-200' : ''}`}
                             onClick={() => { handleCheck(item) }}
                         >
                             <p>{item.name}</p>
-                            <div className={`w-fit h-fit ${selectedItem.includes(item) ? 'visible':'invisible'}`}>
+                            <div className={`w-fit h-fit ${selectedItem.includes(item._id) ? 'visible':'invisible'}`}>
                                 <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
                                     <path stroke="green" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5.917 5.724 10.5 15 1.5" />
                                 </svg>
