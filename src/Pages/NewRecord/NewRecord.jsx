@@ -3,7 +3,7 @@ import ListCard from '../../Components/ListCard/ListCard'
 import ListEmotions from '../../Components/ListEmotions/ListEmotions'
 import { saveRecord } from '../../Services/record_service'
 
-function Home() {
+function NewRecord() {
 
     const [emotions, setEmotions] = useState([])
     const [causes, setCauses] = useState([])
@@ -69,13 +69,13 @@ function Home() {
     return (
         <>
             {/*Container*/}
-            <div className='col-span-11 h-screen p-2 md:p-0 md:mr-8'>
+            <div className='col-span-11 h-screen md:p-0 md:mr-8'>
                 {/*Header*/}
                 <div className='flex items-center h-14 md:h-20'>
-                    <h1 className='text-xl antialiased font-bold text-gray-dark md:text-4xl'>My Registers</h1>
+                    <h1 className='text-xl antialiased font-bold text-gray-dark md:text-4xl'>New Record</h1>
                 </div>
                 {/*Container Emotions Cards*/}
-                <div className='shadow-sm bg-white rounded-2xl'>
+                <div className='shadow-sm bg-white rounded-2xl h-2/12'>
                     <h1 className='p-2 text-xl text-center md:text-4xl'>¿How have you been feeling?</h1>
                     <ListEmotions handleEmotions={handleEmotions} />
                 </div>
@@ -105,4 +105,4 @@ function Home() {
     )
 }
 
-export default Home
+export default NewRecord

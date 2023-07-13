@@ -5,7 +5,9 @@ import Login from '../Pages/Login/Login'
 import Intro1 from '../Pages/Intro1/Intro1'
 import Intro2 from '../Pages/Intro2/Intro2'
 import Dashboard from '../Layout/Dashboard/Dashboard'
-import Home from '../Pages/Home/Home'
+import Home from '../Pages/NewRecord/NewRecord'
+import NewRecord from '../Pages/NewRecord/NewRecord'
+import Record from '../Pages/Record/Record'
 
 const checkAuth = () => {
   return !localStorage.getItem('token') ? redirect('/login') : null
@@ -42,6 +44,16 @@ export const router = createBrowserRouter([
       {
         path: '/dashboard/home',
         element: <Home />,
+        loader: checkAuth
+      },
+      {
+        path: '/dashboard/record',
+        element: <Record />,
+        loader: checkAuth
+      },
+      {
+        path: '/dashboard/NewRecord',
+        element: <NewRecord />,
         loader: checkAuth
       }
     ]
