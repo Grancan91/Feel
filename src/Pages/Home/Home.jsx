@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import EmotionCard from '../../Components/EmotionCard/EmotionCard'
 import { Link } from 'react-router-dom'
-import CauseList from '../../Components/CauseList/CauseList'
+import ListCard from '../../Components/ListCard/ListCard'
 
 function Home() {
 
@@ -36,13 +36,10 @@ function Home() {
                     </div>
                 </div>
                 {/*Sections Container - Causes, Symptom, Strategy*/}
-                <div className='bg-white md:h-1/3 md:flex my-4 shadow-sm rounded-2xl'>
-                <CauseList/>
-                <CauseList />
-                <CauseList />
-
-
-
+                <div className='bg-white my-4 md:h-1/3 md:flex shadow-sm rounded-2xl'>
+                    <ListCard ListOf='Causes'/>
+                    <ListCard ListOf='Symptoms'/>
+                    <ListCard ListOf='Strategies'/>
                 </div>
                 {/*Sections Container - Causes, Symptom, Strategy*/}
                 <div className='bg-white h-1/6 my-4 shadow-sm rounded-2xl'>
