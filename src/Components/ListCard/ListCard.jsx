@@ -3,7 +3,7 @@ import { loadCauses } from '../../Services/cause_service'
 import { loadSymptoms } from '../../Services/symptom_service'
 import { loadStrategy } from '../../Services/strategy_service'
 
-function ListCard({ ListOf }) {
+function ListCard({ ListOf, handleData }) {
 
     const [listItem, setListItem] = useState([])
     const [selectedItem, setSelectedItem] = useState([])
@@ -36,23 +36,21 @@ function ListCard({ ListOf }) {
     const handleCheck = (item) => {
         //Add to selectedItem when click.
         //If allready exist, delete from selectedItem
-        if(selectedItem.indexOf(item) === -1){
+        if (selectedItem.indexOf(item) === -1) {
             setSelectedItem([...selectedItem, item])
+            return false
         } else {
             const arr = [...selectedItem]
             arr.splice(arr.indexOf(item), 1)
             setSelectedItem(arr)
+            return true
         }
     }
 
     const handleButton = () => {
-        //Add new
         console.log(selectedItem)
     }
-    const styleSelected = () => {
 
-        return 'visible'
-    }
 
     return (
         <>
@@ -66,11 +64,11 @@ function ListCard({ ListOf }) {
                     {listItem.map((item, index) => (
                         <div
                             key={index} // Assuming each cause object has a unique 'id' property
-                            className="flex justify-between p-4 border my-2  border-green cursor-pointer hover:bg-green-light"
-                            onClick={()=> {handleCheck(item)}}
+                            className={`flex justify-between p-4 my-2 cursor-pointer hover:bg-green-light ${selectedItem.includes(item) ? 'border rounded-lg border-green' : ''}`}
+                            onClick={() => { handleCheck(item) }}
                         >
                             <p>{item.name}</p>
-                            <div className={`w-fit h-fit ${styleSelected()}`}>
+                            <div className={`w-fit h-fit ${selectedItem.includes(item) ? 'visible':'invisible'}`}>
                                 <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
                                     <path stroke="green" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5.917 5.724 10.5 15 1.5" />
                                 </svg>

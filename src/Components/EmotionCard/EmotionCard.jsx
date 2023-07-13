@@ -19,17 +19,35 @@ function EmotionCard({ selector, handleEmotion }) {
         5: "Dont Know", 
     };
 
-    const [emotion, setEmotion] = useState('')
+    const [listEmotion, setListEmotion] = useState('')
+    const [selectedEmotions, setSelectedEmotions] = useState('')
 
     const handleClick = () => {
-        setEmotion[EMOTION[selector]]
-        handleEmotion(emotion)
+        setListEmotion[EMOTION[selector]]
+        
     }
+    
+    // handleEmotion(selectedEmotions)
+
+    const handleCheck = (item) => {
+        //Add to selectedItem when click.
+        //If allready exist, delete from selectedItem
+        if (selectedItem.indexOf(item) === -1) {
+            setSelectedItem([...selectedItem, item])
+            return false
+        } else {
+            const arr = [...selectedItem]
+            arr.splice(arr.indexOf(item), 1)
+            setSelectedItem(arr)
+            return true
+        }
+    }
+
 
     return (
         <>
-            <div className='w-1/6 cursor-pointer border border-gray-light md:p-2 rounded-2xl hover:bg-green-light' onClick={handleClick}>
-            <h3 className='text-center md:text-4xl dark:text-gray-dark'>Happy</h3>
+            <div className={`w-1/6 cursor-pointer border border-gray-light md:p-2 rounded-2xl hover:bg-green-light `} onClick={handleClick}>
+            <h3 className='text-center md:text-4xl dark:text-gray-dark'>Happ</h3>
                 <img src={IMG[selector]} alt="" />
         </div>
         </>
