@@ -54,7 +54,7 @@ function ListCard({ ListOf, handleData }) {
                     {listItem.map((item, index) => (
                         <div
                             key={index} // Assuming each cause object has a unique 'id' property
-                            className={`flex justify-between p-4 my-2 cursor-pointer hover:bg-green-light ${selectedItem.includes(item._id) ? 'border rounded-lg border-green bg-lime-200' : ''}`}
+                            className={`flex justify-between p-4 my-2 border border-gray-light rounded-lg cursor-pointer hover:bg-green-light ${selectedItem.includes(item._id) ? 'border rounded-lg border-green bg-lime-200' : ''}`}
                             onClick={() => { handleCheck(item) }}
                         >
                             <p>{item.name}</p>
@@ -66,9 +66,11 @@ function ListCard({ ListOf, handleData }) {
                         </div>
                     ))}
                 </div>
-                <button className='w-full antialiased bg-green-light rounded-full inline-block p-6 py-3 text-white hover:bg-green'
+                <div className='flex justify-center'>
+                <button className='w-1/3 antialiased bg-green-light rounded-full inline-block p-6 py-3 text-white hover:bg-green'
                     onClick={handleButton}>
                     Add New</button>
+                        </div>
             </div>
         </>
     )

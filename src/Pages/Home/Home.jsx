@@ -80,15 +80,15 @@ function Home() {
                     <ListEmotions handleEmotions={handleEmotions} />
                 </div>
                 {/*Sections Container - Causes, Symptom, Strategy*/}
-                <div className='bg-white my-4 md:h-1/3 md:flex shadow-sm rounded-2xl'>
+                <div className='bg-white my-4 md:h-2/4 md:flex shadow-sm rounded-2xl'>
                     <ListCard ListOf='Causes' handleData={handleCauses}/>
                     <ListCard ListOf='Symptoms' handleData={handleSymptoms} />
                     <ListCard ListOf='Strategies' handleData={handleStrategies} />
                 </div>
                 {/*Sections Container - Causes, Symptom, Strategy*/}
-                <div className='bg-white md:h-1/6 my-4 p-2 md:p-10 gap-2 shadow-sm rounded-2xl md:flex'>
+                <div className='bg-white md:h-fit my-4 p-2 md:p-10 gap-2 shadow-sm rounded-2xl md:flex'>
 
-                    <input onChange={handleDetails} type="text" value={emotions} className='w-full md:w-2/3 border border-gray rounded-md my-2 p-2 md:text-4xl' />
+                    <input onChange={handleDetails} type="text" className='w-full md:w-2/3 border border-gray rounded-md my-2 md:text-4xl' />
                     {/*Button Container*/}
                     <div className='flex md:w-1/3 justify-between'>
                         <button className='md:w-1/2 antialiased text-red md:text-4xl border-red border rounded-xl p-6 py-3 md:mx-4 hover:bg-rose-200'
