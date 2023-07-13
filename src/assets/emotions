@@ -1,0 +1,31 @@
+[{
+  "_id": {
+    "$oid": "64a814ce1d1bd356d03825dd"
+  },
+  "name": "Happy",
+  "img": "https://openmoji.org/data/color/svg/1F600.svg"
+},{
+  "_id": {
+    "$oid": "64afe550c75e1c03c255bbf9"
+  },
+  "name": "Angry",
+  "img": "https://openmoji.org/data/color/svg/1F92C.svg"
+},{
+  "_id": {
+    "$oid": "64aff977c75e1c03c255bbfb"
+  },
+  "name": "Fear",
+  "img": "https://openmoji.org/data/color/svg/1F628.svg"
+},{
+  "_id": {
+    "$oid": "64aff987c75e1c03c255bbfd"
+  },
+  "name": "Sad",
+  "img": "https://openmoji.org/data/color/svg/1F622.svg"
+},{
+  "_id": {
+    "$oid": "64aff9adc75e1c03c255bbff"
+  },
+  "name": "D'Know",
+  "img": "https://openmoji.org/data/color/svg/1F615.svg"
+}]
