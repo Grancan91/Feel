@@ -42,7 +42,6 @@ console.log(records)
                         })}
 
                     </div>
-                    <button onClick={handleClick}>asdasdasd</button>
                 </div>
             </>
         )

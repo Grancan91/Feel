@@ -1,11 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function ButtonCard({Button_text = 'Button_text', Title_text = 'Title_text', Detail_text = 'Detail_text', Route}) {
+function ButtonCard({Button_text = 'Button_text', Title_text = 'Title_text', Detail_text = 'Detail_text', Route, variant = 1}) {
+  
+  const BUTTON_VARIANT = {
+    1: "bg-white text-green hover:border hover:border-white hover:text-black hover:bg-lime-100",
+    2: "bg-white text-red hover:border hover:border-white hover:text-black hover:bg-rose-200"
+  }
+  const VARIANT = {
+    1: "bg-green",
+    2: "bg-red"
+  }
+  
   return (
     <>
       {/*Container*/}
-      <div className='bg-green rounded-md md:h-36 md:w-2/3 flex flex-col items-center md:flex-row md:justify-between justify-center'>
+      <div className={`${VARIANT[variant]} rounded-md md:h-36 md:w-2/3 flex flex-col items-center md:flex-row md:justify-between justify-center`}>
         {/*Container IMG & Text*/}
         <div className='flex justify-start'>
         {/*Container IMG*/}
@@ -22,7 +32,7 @@ function ButtonCard({Button_text = 'Button_text', Title_text = 'Title_text', Det
         {/*Container Button*/}
         <div className='flex justify-end items-end p-4 md:w-3/5'>
           <Link to={`${Route}`}>
-            <button className='bg-white md:text-xl text-green md:mt-12 w-fit h-fit  p-4 rounded-lg hover:border hover:border-white hover:text-red'>{Button_text}</button>
+            <button className={`${BUTTON_VARIANT[variant]} md:text-xl  md:mt-12 w-fit h-fit  p-4 rounded-lg`}>{Button_text}</button>
           </Link>
         </div>
 

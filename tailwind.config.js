@@ -8,7 +8,7 @@ export default {
     extend: {
       colors: {
         blue: "#2196f3",
-        "blue-dark": "#1976d2",
+        "blue-dark": "#4339F2",
         "gray-dark": "#273444",
         oldgray: "#8492a6",
         gray: "#6B7280",
@@ -16,7 +16,10 @@ export default {
         "background-light": "#F5F5F5",
         green: "#34B53A",
         "green-light":"#81c784",
+        "green-xlight":"#E2FBD7",
         "red": "#FF6B5F",
+        "red-light":"#FFE5D3",
+        "blue-light":"#DAD7FE",
       },
       backgroundImage: {
         "happy": "url('https://openmoji.org/data/color/svg/1F600.svg')",
