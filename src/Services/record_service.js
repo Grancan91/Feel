@@ -13,3 +13,17 @@ export const saveRecord = async (record) => {
         return error
     }
 }
+
+export const loadRecords = async () => {
+    try {
+        const { data } = await api.get('/record', {
+            headers: {
+                token: localStorage.getItem('token')
+            }
+        })
+        return data
+    } catch (error) {
+        console.log(error)
+        return error
+    }
+}

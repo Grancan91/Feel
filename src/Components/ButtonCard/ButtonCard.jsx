@@ -14,7 +14,7 @@ function ButtonCard({Button_text = 'Button_text', Title_text = 'Title_text', Det
         </div>
         {/*Container Text*/}
         <div className='p-2 mx-2 w-fit md:block'>
-          <h3 className='text-white my-4 text-2xl md:text-3xl'>{Title_text}</h3>
+          <h3 className='text-white my-4 text-2xl md:text-2xl'>{Title_text}</h3>
           <p className='text-white text-lg'>{Detail_text}</p>
         </div>
         </div>

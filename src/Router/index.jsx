@@ -5,7 +5,6 @@ import Login from '../Pages/Login/Login'
 import Intro1 from '../Pages/Intro1/Intro1'
 import Intro2 from '../Pages/Intro2/Intro2'
 import Dashboard from '../Layout/Dashboard/Dashboard'
-import Home from '../Pages/NewRecord/NewRecord'
 import NewRecord from '../Pages/NewRecord/NewRecord'
 import Record from '../Pages/Record/Record'
 import SavedRecord from '../Pages/SavedRecord/SavedRecord'
@@ -39,16 +38,11 @@ export const router = createBrowserRouter([
   },
   {
     path: '/dashboard',
-    element: <Dashboard />,
+    element: <Dashboard/>,
     loader: checkAuth,
     children: [
       {
-        path: '/dashboard/home',
-        element: <Home />,
-        loader: checkAuth
-      },
-      {
-        path: '/dashboard/record',
+        path: '/dashboard/Record',
         element: <Record />,
         loader: checkAuth
       },
