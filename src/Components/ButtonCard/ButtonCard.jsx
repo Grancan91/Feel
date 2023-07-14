@@ -1,20 +1,33 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-function ButtonCard() {
+function ButtonCard({Button_text = 'Button_text', Title_text = 'Title_text', Detail_text = 'Detail_text', Route}) {
   return (
-    <div className='bg-green rounded-md w-2/3 md:flex'>
-    <div className='flex p-2 justify-center w-1/3'>
-    <img className='h-14 w-14 md:w-32 md:h-32' src='https://openmoji.org/data/color/svg/270D-1F3FB.svg'/>
-    </div>
-    <div className='p-2 w-3/3'>
-    <h3 className='text-white mb-2 text-md'>Añadir Registro</h3>
-    <p className='text-white text-sm'>Every large design company whether it’s a multi-national 
-    branding corporation or a regular.</p>
-    </div>
-    <div className='flex items-end p-4 md:w-1/3'>
-    <button className='bg-white text-green w-fit h-fit  p-4 rounded-lg'>New Registry</button>
-    </div>
-    </div>
+    <>
+      {/*Container*/}
+      <div className='bg-green rounded-md md:h-36 md:w-2/3 flex flex-col items-center md:flex-row md:justify-between justify-center'>
+        {/*Container IMG & Text*/}
+        <div className='flex justify-start'>
+        {/*Container IMG*/}
+        <div className='p-4 w-fit hidden md:block'>
+          <img className='h-28 w-28' src='https://openmoji.org/data/color/svg/270D-1F3FB.svg' />
+        </div>
+        {/*Container Text*/}
+        <div className='p-2 mx-2 w-fit md:block'>
+          <h3 className='text-white my-4 text-2xl md:text-3xl'>{Title_text}</h3>
+          <p className='text-white text-lg'>{Detail_text}</p>
+        </div>
+        </div>
+       
+        {/*Container Button*/}
+        <div className='flex justify-end items-end p-4 md:w-3/5'>
+          <Link to={`${Route}`}>
+            <button className='bg-white md:text-xl text-green md:mt-12 w-fit h-fit  p-4 rounded-lg hover:border hover:border-white hover:text-red'>{Button_text}</button>
+          </Link>
+        </div>
+
+      </div>
+    </>
   )
 }
 

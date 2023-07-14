@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ListCard from '../../Components/ListCard/ListCard'
 import ListEmotions from '../../Components/ListEmotions/ListEmotions'
 import { saveRecord } from '../../Services/record_service'
+import { useNavigate } from 'react-router-dom'
 
 function NewRecord() {
 
@@ -11,7 +12,7 @@ function NewRecord() {
     const [strategies, setStrategies] = useState([])
     const [details, setDetails] = useState('')
     const [record, setRecord] = useState({})
-
+    const navigate = useNavigate()
 
     //Handle emotions from child ListEmotions
     const handleEmotions = (emotion) => {
@@ -38,8 +39,6 @@ function NewRecord() {
         //Go to back
     }
     const handleSave = () => {
-        console.log(emotions, causes, symptoms, strategies)
-
         //Call to services to save.
         setRecord({
             "detail": details,
@@ -48,15 +47,15 @@ function NewRecord() {
             "symptoms": symptoms,
             "strategies": strategies
         })
-    
     }
 
     const handleRefresh = () =>{
         if (record.emotions) {
             const save = async () =>{
                 await saveRecord(record)
-        }
-        save()
+            }
+            save()
+            navigate('/dashboard/SavedRecord')
         }
     }
     
