@@ -20,7 +20,9 @@ function Record() {
     }, [])
 
     const handleClick = () => {
+
     }
+    
 console.log(records)
     if (records.length > 0) {
         return (

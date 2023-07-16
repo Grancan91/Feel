@@ -1,13 +1,20 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ButtonCard from '../../Components/ButtonCard/ButtonCard'
 import './Home.css'
 import ProgressCard from '../../Components/ProgressCard/ProgressCard';
 function Home() {
 
+    const [showHome, setShowHome] = useState(false);
+    
+    useEffect(() => {
+        setShowHome(true);
+    }, []);
+
+    
     return (
         <>
             {/*Container*/}
-            <div className='col-span-12 md:col-span-11 h-screen p-8'>
+            <div className={`col-span-12 md:col-span-11 h-screen p-8 ${showHome ? 'opacity-100 transition-opacity duration-500' : 'opacity-0'}`}>
                 {/*Header*/}
                 <div className='items-center h-20 my-4'>
                     <h1 className='text-xl antialiased font-bold md:text-4xl'>My Registers</h1>
