@@ -27,3 +27,18 @@ export const loadRecords = async () => {
         return error
     }
 }
+
+export const loadAverageEmotions = async () => {
+    try {
+        console.log('aqui')
+        const { data } = await api.get('/record/average', {
+            headers: {
+                token: localStorage.getItem('token')
+            }
+        })
+        return data
+    } catch (error) {
+        return error
+    }
+}
+
