@@ -18,11 +18,15 @@ function Navbar({selected = 'Home'}) {
     //Pendiente capturar evento de cambio para establecer array de dependencia.
 
     const switchStyle = () => {
-        if(selected === 'Home'){
+        if (selected === '/dashboard/home'){
             setHome(selectedStyle)
+        } else {
+            setHome('opacity-50')
         }
-        if (selected === 'Record') {
+        if (selected === '/dashboard/record') {
             setRecord(selectedStyle)
+        } else {
+            setRecord('opacity-50')
         }
         
 
@@ -30,7 +34,7 @@ function Navbar({selected = 'Home'}) {
     
     useEffect(()=>{
         switchStyle()
-    },[])
+    },[selected])
 
 
     return (
@@ -49,7 +53,7 @@ function Navbar({selected = 'Home'}) {
 
                 {/*'Home Button'*/}
                 <Link to={'/dashboard/home'}>
-                <div className={`${home} w-fit h-fit p-2 my-2 mx-2 md:w-fit md:p-14 md:mx-0`}>
+                    <div className={`${home} w-fit h-fit p-2 my-2 mx-2 md:w-fit md:p-4 md:my-8 md:mx-0`}>
                     <svg className="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
                     </svg>
@@ -57,7 +61,7 @@ function Navbar({selected = 'Home'}) {
                 </Link>
                 <Link to={'/dashboard/record'}>
                 {/*'Record Button'*/}
-                    <div className={`${record} w-fit h-fit p-2 my-2 mx-2 md:w-fit md:p-14 md:mx-0`}>
+                    <div className={`${record} w-fit h-fit p-2 my-2 mx-2 md:w-fit md:p-4 md:my-8 md:mx-0`}>
                     <svg className="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.96 2.96 0 0 0 .13 5H5Z" />
                         <path d="M6.737 11.061a2.961 2.961 0 0 1 .81-1.515l6.117-6.116A4.839 4.839 0 0 1 16 2.141V2a1.97 1.97 0 0 0-1.933-2H7v5a2 2 0 0 1-2 2H0v11a1.969 1.969 0 0 0 1.933 2h12.134A1.97 1.97 0 0 0 16 18v-3.093l-1.546 1.546c-.413.413-.94.695-1.513.81l-3.4.679a2.947 2.947 0 0 1-1.85-.227 2.96 2.96 0 0 1-1.635-3.257l.681-3.397Z" />

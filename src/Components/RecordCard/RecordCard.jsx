@@ -16,7 +16,7 @@ function RecordCard({Record}) {
     return (
         <>
             {/*Container Card*/}
-            <div className='p-2 bg-white border border-gray rounded-md md:rounded-xl'>
+            <div className='p-2 bg-white border border-gray rounded-md md:rounded-xl '>
 
                 {/*Header Card Container*/}
                 <div className='flex items-center p-2 ' onClick={handleClick}>
