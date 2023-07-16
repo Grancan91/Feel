@@ -25,6 +25,15 @@ function Home() {
     
     return (
         <div className='col-span-12 md:col-span-11 h-screen p-8'>
+        {/*Header*/}
+        <motion.div
+          initial={{ opacity: 0, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 0 }}
+          transition={{ duration: 1.0 }}
+          className='flex items-center h-20'>
+          <h1 className='text-xl antialiased font-bold text-gray-dark md:text-4xl'>Home</h1>
+        </motion.div>
       <AnimatePresence>
         {showHome && (
           <motion.div

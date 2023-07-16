@@ -38,7 +38,7 @@ function ProgressCard({ Title, TopList, Variant, Img }) {
             {/*Cards*/}
             <div className='rounded-xl p-4 bg-white'>
                 <div className='flex items-center'>
-                    <div className='w-fit h-fit p-2 rounded-full bg-slate-200'>
+                    <div className={`w-fit h-fit p-2 rounded-full ${VARIANT[Variant]}`}>
                         <img className='w-20' src={`${IMG[Img]}`} alt="" />
                     </div>
                     <div className='mx-4 text-2xl font-semibold'>{Title}</div>
