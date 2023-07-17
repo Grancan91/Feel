@@ -7,7 +7,7 @@ export const userSignup = async (name, age, email, password, pro_email) => {
             age: age,
             email: email,
             password: password,
-            pro_email: pro_email,
+            professional_email: pro_email,
         })
         if (data.code === 11000) {
             return data            

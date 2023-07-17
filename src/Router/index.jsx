@@ -10,13 +10,14 @@ import Record from '../Pages/Record/Record'
 import SavedRecord from '../Pages/SavedRecord/SavedRecord'
 import Home from '../Pages/Home/Home'
 import ProLogin from '../Pages/ProLogin/ProLogin'
+import MyPatients from '../Pages/MyPatients/MyPatients'
 
 const checkAuth = () => {
   return !localStorage.getItem('token') ? redirect('/login') : null
 }
 const checkPro = () => {
   console.log(localStorage.getItem('rol'))
-  return (localStorage.getItem('rol') !== 'profesional') ? redirect('/login') : null
+  return (localStorage.getItem('rol') !== 'professional') ? redirect('/login') : null
 }
 
 export const router = createBrowserRouter([
@@ -80,7 +81,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: '/prodashboard/MyPatients',
-        element: <Home />,
+        element: <MyPatients />,
         loader: checkPro
       },
       {

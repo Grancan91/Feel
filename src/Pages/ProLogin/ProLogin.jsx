@@ -30,11 +30,9 @@ function ProLogin() {
   const doLogin = async () => {
     try {
       const res = await proLogin(email, password)
-      //Comprobar que tenga ROL Profesional
-      console.log(res)
       if (res) {
         setErrorLabel('')
-          navigate('/prodashboard/home')
+        navigate('/prodashboard/MyPatients')
       } else {
         setErrorLabel('Email or Password incorrect')
       }

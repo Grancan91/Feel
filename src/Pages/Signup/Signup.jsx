@@ -44,7 +44,7 @@ function Signup() {
   const doSignup = async () => {
     try {
       const res = await userSignup(name, age, email, password, proEmail)
-      
+      console.log(proEmail)
       if (res.code === 11000){
         setEmailLabel(res.error)
         setEmail(res)

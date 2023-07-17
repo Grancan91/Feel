@@ -18,3 +18,20 @@ export const updateReminder = async (reminder_freq, reminder_time, reminder_send
         return err
     }
 }
+
+export const loadUsers = async () => {
+    try {
+        
+        const { data } = await api.get('/user', {
+            headers: {
+                token: localStorage.getItem('token'),
+            }
+        })
+        if (data) {
+            return data
+        }
+
+    } catch (err) {
+        return err
+    }
+}
