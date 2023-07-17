@@ -11,6 +11,7 @@ import SavedRecord from '../Pages/SavedRecord/SavedRecord'
 import Home from '../Pages/Home/Home'
 import ProLogin from '../Pages/ProLogin/ProLogin'
 import MyPatients from '../Pages/MyPatients/MyPatients'
+import Patient from '../Pages/Patient/Patient'
 
 const checkAuth = () => {
   return !localStorage.getItem('token') ? redirect('/login') : null
@@ -86,7 +87,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/prodashboard/Patient',
-        element: <Record />,
+        element: <Patient />,
         loader: checkPro
       },
     ]

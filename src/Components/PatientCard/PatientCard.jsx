@@ -7,7 +7,7 @@ function PatientCard({Patient}) {
     return (
         <>
             {/*Patien Card*/}
-            <div className='mr-16'>
+            <div className='cursor-pointer mr-16'>
                 <div className={`w-fit h-fit p-2 rounded-full bg-slate-600`}>
                     <img className='w-20' src={`${Patient.img}`} alt="" />
                 </div>

@@ -28,6 +28,23 @@ export const loadRecords = async () => {
     }
 }
 
+export const loadPatientRecords = async () => {
+    try {
+        const patientId = localStorage.getItem("patient_id");
+        const { data } = await api.get(`/record/${patientId}`, {
+            headers: {
+                token: localStorage.getItem('token')
+            }
+        });
+        return data;
+    } catch (error) {
+        console.log(error);
+        return error;
+    }
+};
+
+
+
 export const loadAverageEmotions = async () => {
     try {
         console.log('aqui')

@@ -2,26 +2,27 @@ import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion';
 import PatientCard from '../../Components/PatientCard/PatientCard';
 import { loadUsers } from '../../Services/user_service';
+import { useNavigate } from 'react-router-dom';
 
 function MyPatients() {
 
     const [patients, setPatients] = useState()
+    const navigate = useNavigate()
     //https://openmoji.org/data/color/svg/1F468-200D-1F9B2.svg
-    const Patient = {
-        "name": "Abel",
-        "email": "abl.lopper@gmail.com",
-    }
-    
+
     useEffect(()=> {
         const handleUsers = async () => {
             const data = await loadUsers()
            setPatients(data)
+           console.log(data)
         }
         handleUsers()
     },[])
 
-    const handleCheck = () => {
-        console.log(first)
+    const handleCheck = (patient) => {
+        localStorage.setItem('patient_id', patient._id)
+        localStorage.setItem('patient_name', patient.name)
+        navigate('/prodashboard/Patient')
     }
 
     return (
@@ -47,7 +48,9 @@ function MyPatients() {
                 {/* Patient Cards */}
                 {patients && patients.length > 0 ? (
                     patients.map((patient, index) => (
-                        <PatientCard key={index} Patient={patient} onClick={() => { handleCheck(patient.id) }} />
+                        <div key={index} onClick={() => { handleCheck(patient) }}>
+                        <PatientCard  Patient={patient}  />
+                        </div>
                     ))
                 ) : (
                     <p>No users</p>
