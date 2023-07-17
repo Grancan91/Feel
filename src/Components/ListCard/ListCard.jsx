@@ -67,9 +67,9 @@ function ListCard({ ListOf, handleData }) {
                     ))}
                 </div>
                 <div className='flex justify-center'>
-                <button className='w-1/3 antialiased bg-green-light rounded-full inline-block p-6 py-3 text-white hover:bg-green'
+               {/*  <button className='w-1/3 antialiased bg-green-light rounded-full inline-block p-6 py-3 text-white hover:bg-green'
                     onClick={handleButton}>
-                    Add New</button>
+                    Add New</button> */}
                         </div>
             </div>
         </>

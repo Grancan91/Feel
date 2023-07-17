@@ -91,8 +91,8 @@ function Home() {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
                 <ButtonCard
                   Button_text='Create new record'
-                  Title_text='Crear nuevo registro de sentimientos'
-                  Detail_text='¡Comienza a registrar tus sentimientos y obtén una visión más profunda de tu mundo emocional!'
+                    Title_text='Create a new feelings log'
+                  Detail_text='¡Start keeping track of your emotions and gain a deeper understanding of your emotional world!'
                   Route={'/dashboard/NewRecord'}
                 />
               </motion.div>
@@ -100,9 +100,9 @@ function Home() {
             <div className='w-full p-2'>
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
                 <ButtonCard
-                  Button_text='Create new record'
+                  Button_text='Export Report'
                   Title_text='Export Report'
-                  Detail_text='¡Comienza a registrar tus sentimientos y obtén una visión más profunda de tu mundo emocional!'
+                  Detail_text='Send your reports to your healthcare professional!'
                   Route={'/dashboard/NewRecord'}
                   variant={2}
                 />

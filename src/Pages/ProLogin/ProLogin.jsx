@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { isEmail, isPassword, styleEmail, styleName, stylePassword } from '../../Services/validations_service'
-import { userLogin } from '../../Services/auth_service'
+import { proLogin } from '../../Services/auth_service'
 
 
-function Login() {
+function ProLogin() {
 
   const navigate = useNavigate()
 
@@ -29,19 +29,12 @@ function Login() {
 
   const doLogin = async () => {
     try {
-      const res = await userLogin(email, password)
-
+      const res = await proLogin(email, password)
+      //Comprobar que tenga ROL Profesional
+      console.log(res)
       if (res) {
         setErrorLabel('')
-        const hasReminder = localStorage.getItem('reminder_freq')
-        if(hasReminder !== '0'){
-          navigate('/dashboard/home')
-        } else {
-          navigate('/intro1')
-        }
-        //si el usuario tiene los Reminders Establecidos saltar intros
-        //Servicio que devuelva true o false si tiene esos datos
-        //navigate('/dashboard')
+          navigate('/prodashboard/home')
       } else {
         setErrorLabel('Email or Password incorrect')
       }
@@ -57,7 +50,7 @@ function Login() {
 
         <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
           {/* Column 1 */}
-          <div className="h-40 md:h-full bg-cover bg-center rounded-lg" style={{ backgroundImage: 'url("../../src/assets/emotion-brain.jpg")' }}>
+          <div className="h-40 md:h-full bg-cover bg-center rounded-lg" style={{ backgroundImage: 'url("../../src/assets/doctor.jpg")' }}>
           </div>
           {/* Column 2 */}
           <div className="border border-gray-light rounded-lg p-2 md:p-8">
@@ -77,13 +70,8 @@ function Login() {
             <button className='w-full antialiased bg-blue-dark rounded-full inline-block p-6 py-3 my-4 text-white'
               onClick={handleForm}>
               Login</button>
-            <Link to={'/signup'}>
-              <p className='text-center underline cursor-pointer'>Dont have account? Signup.</p>
-            </Link>
-            <Link to={'/prologin'}>
-            <button className='w-full antialiased bg-green rounded-full inline-block p-6 py-3 mt-8 text-white'
-              >
-              Are you a Profesional?</button>
+            <Link to={'/login'}>
+              <p className='text-center underline cursor-pointer'>Im a User, Go to User Log.</p>
             </Link>
           </div>
         </div>
@@ -94,4 +82,4 @@ function Login() {
   )
 }
 
-export default Login
+export default ProLogin

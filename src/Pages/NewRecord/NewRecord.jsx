@@ -3,6 +3,7 @@ import ListCard from '../../Components/ListCard/ListCard'
 import ListEmotions from '../../Components/ListEmotions/ListEmotions'
 import { saveRecord } from '../../Services/record_service'
 import { useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion';
 
 function NewRecord() {
 
@@ -74,18 +75,32 @@ function NewRecord() {
                     <h1 className='text-xl antialiased font-bold text-gray-dark md:text-4xl'>New Record</h1>
                 </div>
                 {/*Container Emotions Cards*/}
-                <div className='shadow-sm bg-white rounded-2xl h-2/12'>
+                <motion.div
+                    initial={{ opacity: 0, y: -200 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className='shadow-sm bg-white rounded-2xl h-2/12'>
                     <h1 className='p-2 text-xl text-center md:text-4xl'>¿How have you been feeling?</h1>
                     <ListEmotions handleEmotions={handleEmotions} />
-                </div>
+                </motion.div>
                 {/*Sections Container - Causes, Symptom, Strategy*/}
-                <div className='bg-white my-4 md:h-2/4 md:flex shadow-sm rounded-2xl'>
+                <motion.div
+                    initial={{ opacity: -50, x: 300 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.7 }}
+                    className='bg-white my-4 md:h-2/4 md:flex shadow-sm rounded-2xl'>
                     <ListCard ListOf='Causes' handleData={handleCauses}/>
                     <ListCard ListOf='Symptoms' handleData={handleSymptoms} />
                     <ListCard ListOf='Strategies' handleData={handleStrategies} />
-                </div>
+                </motion.div>
                 {/*Sections Container - Causes, Symptom, Strategy*/}
-                <div className='bg-white md:h-fit my-4 p-2 md:p-10 gap-2 shadow-sm rounded-2xl md:flex'>
+                <motion.div
+                    initial={{ opacity: -50, y: 300 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className='bg-white md:h-fit my-4 p-2 md:p-10 gap-2 shadow-sm rounded-2xl md:flex'>
 
                     <input onChange={handleDetails} type="text" className='w-full md:w-2/3 border border-gray rounded-md my-2 md:text-4xl' />
                     {/*Button Container*/}
@@ -98,7 +113,7 @@ function NewRecord() {
                             onClick={handleSave}>
                             Save</button>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </>
     )

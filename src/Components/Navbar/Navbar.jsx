@@ -20,10 +20,11 @@ function Navbar({selected = 'Home'}) {
     const switchStyle = () => {
         if (selected === '/dashboard/home'){
             setHome(selectedStyle)
+                
         } else {
             setHome('opacity-50')
         }
-        if (selected === '/dashboard/record') {
+        if (selected === '/dashboard/record' || selected === '/dashboard/NewRecord') {
             setRecord(selectedStyle)
         } else {
             setRecord('opacity-50')

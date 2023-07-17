@@ -9,9 +9,14 @@ import NewRecord from '../Pages/NewRecord/NewRecord'
 import Record from '../Pages/Record/Record'
 import SavedRecord from '../Pages/SavedRecord/SavedRecord'
 import Home from '../Pages/Home/Home'
+import ProLogin from '../Pages/ProLogin/ProLogin'
 
 const checkAuth = () => {
   return !localStorage.getItem('token') ? redirect('/login') : null
+}
+const checkPro = () => {
+  console.log(localStorage.getItem('rol'))
+  return (localStorage.getItem('rol') !== 'profesional') ? redirect('/login') : null
 }
 
 export const router = createBrowserRouter([
@@ -26,6 +31,10 @@ export const router = createBrowserRouter([
   {
     path: '/login',
     element: <Login />
+  },
+  {
+    path: '/prologin',
+    element: <ProLogin />
   },
   {
     path: '/intro1',
@@ -64,5 +73,23 @@ export const router = createBrowserRouter([
       },
     ]
   },
+  {
+    path: '/prodashboard',
+    element: <Dashboard />,
+    loader: checkPro,
+    children: [
+      {
+        path: '/prodashboard/MyPatients',
+        element: <Home />,
+        loader: checkPro
+      },
+      {
+        path: '/prodashboard/Patient',
+        element: <Record />,
+        loader: checkPro
+      },
+    ]
+  },
+
 
 ])

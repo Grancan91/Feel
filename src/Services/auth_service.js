@@ -34,3 +34,17 @@ export const userLogin = async (email, password) => {
         return false
     }
 }
+
+export const proLogin = async (email, password) => {
+    try {
+        const { data } = await api.post('/auth/login', { email, password })
+        localStorage.setItem('token', data.userDetails.token)
+        localStorage.setItem('name', data.userDetails.name)
+        localStorage.setItem('email', data.userDetails.email)
+        localStorage.setItem('id', data.userDetails.id)
+        localStorage.setItem('rol', data.userDetails.rol)
+        return true
+    } catch (err) {
+        return false
+    }
+}
