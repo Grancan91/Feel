@@ -28,8 +28,8 @@ function Record() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 0 }}
                     transition={{ duration: 1.0 }}
-                    className='flex items-center h-20'>
-                    <h1 className='text-xl antialiased font-bold text-gray-dark md:text-4xl'>My Registers</h1>
+                    className='flex items-center h-10 md:h-20 mt-2 p-4 '>
+                    <h1 className='text-xl antialiased font-bold text-gray-dark md:text-3xl'>My Registers</h1>
                 </motion.div>
                 {/*Container Button Card*/}
                 <motion.div
@@ -37,7 +37,7 @@ function Record() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -100 }}
                     transition={{ duration: 0.5 }}
-                    className="w-full p-2">
+                    className="w-full p-4">
                     <ButtonCard Button_text='Create new record' Title_text='Crear nuevo registro de sentimientos' Detail_text='¡Comienza a registrar tus sentimientos y obtén una visión más profunda de tu mundo emocional!' Route={'/dashboard/NewRecord'} />
                 </motion.div>
                 {/*Container of Records*/}

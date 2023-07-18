@@ -30,7 +30,7 @@ function Home() {
         exit={{ opacity: 0, y: 0 }}
         transition={{ duration: 1.0 }}
         className='flex items-center h-10 md:h-20'>
-        <h1 className='text-xl antialiased font-bold text-gray-dark md:text-4xl'>Home</h1>
+        <h1 className='text-xl antialiased font-bold text-gray-dark md:text-3xl'>Home</h1>
       </motion.div>
       <AnimatePresence>
         {showHome && (

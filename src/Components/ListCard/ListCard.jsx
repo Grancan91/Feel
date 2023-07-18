@@ -49,7 +49,7 @@ function ListCard({ ListOf, handleData }) {
                 {/*ListContainer*/}
                 <div className='p-2 h-full simplebar scroll-auto md:scroll-y-contain overflow-auto md:hover:scroll-auto'>
                     {/*Title*/}
-                    <h2 className='text-xl p-2 md:text-4xl'>{ListOf}</h2>
+                    <h2 className='text-xl p-2 md:text-2xl'>{ListOf}</h2>
                     {/*List-Item*/}
                     {listItem.map((item, index) => (
                         <div

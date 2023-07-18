@@ -69,18 +69,18 @@ function NewRecord() {
     return (
         <>
             {/*Container*/}
-            <div className='col-span-11 h-screen md:p-0 md:mr-8'>
+            <div className='col-span-11 h-screen md:p-4 md:mr-8'>
                 {/*Header*/}
-                <div className='flex items-center h-14 md:h-20'>
-                    <h1 className='text-xl antialiased font-bold text-gray-dark md:text-4xl'>New Record</h1>
+                <div className='flex items-center  h-14 md:h-20'>
+                    <h1 className='text-xl antialiased font-bold text-gray-dark md:text-3xl'>New Record</h1>
                 </div>
                 {/*Container Emotions Cards*/}
                 <motion.div
                     initial={{ opacity: 0, y: -200 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    className='shadow-sm bg-white rounded-2xl h-2/12'>
-                    <h1 className='p-2 text-xl text-center md:text-4xl'>¿How have you been feeling?</h1>
+                    className='shadow-sm bg-white rounded-lg h-2/12'>
+                    <h1 className='p-2 text-xl text-center md:text-2xl'>¿How have you been feeling?</h1>
                     <ListEmotions handleEmotions={handleEmotions} />
                 </motion.div>
                 {/*Sections Container - Causes, Symptom, Strategy*/}
@@ -89,7 +89,7 @@ function NewRecord() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.7 }}
-                    className='bg-white my-4 md:h-2/4 md:flex shadow-sm rounded-2xl'>
+                    className='bg-white my-4 md:h-2/5 md:flex shadow-sm rounded-lg'>
                     <ListCard ListOf='Causes' handleData={handleCauses}/>
                     <ListCard ListOf='Symptoms' handleData={handleSymptoms} />
                     <ListCard ListOf='Strategies' handleData={handleStrategies} />
@@ -100,19 +100,21 @@ function NewRecord() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className='bg-white md:h-fit my-4 p-2 md:p-10 gap-2 shadow-sm rounded-2xl md:flex'>
-
-                    <input onChange={handleDetails} type="text" className='w-full md:w-2/3 border border-gray rounded-md my-2 md:text-4xl' />
+                    className='bg-white md:h-fit my-0 p-4 md:p-10 gap-2 shadow-sm rounded-lg'>
+                        <h2 className='text-lg'>Something important to tell?</h2>
+                        <div className='w-full md:flex'>
+                    <input onChange={handleDetails} type="text" className='w-full border border-gray rounded-md my-2 p-1 md:p-2 md:text-lg' />
                     {/*Button Container*/}
                     <div className='flex md:w-1/3 justify-between'>
-                        <button className='md:w-1/2 antialiased text-red md:text-4xl border-red border rounded-xl p-6 py-3 md:mx-4 hover:bg-rose-200'
+                        <button className='md:w-1/2 antialiased text-red md:text-lg border-red border rounded-xl p-4 py-3 md:mx-4 hover:bg-rose-200'
                             onClick={handleCancel}>
                             Cancel</button>
 
-                        <button className='w-1/2 antialiased bg-green-light rounded-xl p-6 py-3 text-white md:text-4xl hover:bg-green'
+                        <button className='w-1/2 antialiased bg-green-light rounded-xl p-4 py-3 text-white md:text-lg hover:bg-green'
                             onClick={handleSave}>
                             Save</button>
                     </div>
+                                </div>
                 </motion.div>
             </div>
         </>
