@@ -43,6 +43,18 @@ function ProgressCard({ Title, TopList, Variant, Img }) {
                     </div>
                     <div className='mx-4 text-2xl font-semibold'>{Title}</div>
                 </div>
+
+
+///Corporativa
+// Presentacion soy tal, estudie tal, experiencia en; y especializado. Venderme como front
+// En una eslide, problema y justificacion 
+//Tecnologias - logosy nombre - por que estas Tecnologias
+//Demostracion
+//Codigo - Graficas flujo
+//Futuras implementaciones
+
+
+
                 {/*Cards*/}
                 <div className='flex mt-4 justify-between'>
                     <div className=''>{keys && keys.length > 0 ? keys[0] : 'Loading'}</div>

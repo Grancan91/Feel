@@ -6,10 +6,10 @@ function PatientCard({Patient}) {
 
     return (
         <>
-            {/*Patien Card*/}
+            {/*Patient Card*/}
             <div className='cursor-pointer mr-16'>
-                <div className={`w-20 h-fit p-2 rounded-full bg-slate-600`}>
-                    <img className='w-20' src={`${Patient.img}`} alt="" />
+                <div className="w-28 h-28  rounded-full overflow-hidden">
+                    <img className='object-cover border w-full h-full' src={`${Patient.img}`} alt=""/>
                 </div>
                 <div className='flex justify-center'>
                     <h3>{Patient.name}</h3>

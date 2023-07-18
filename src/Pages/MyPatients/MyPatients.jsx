@@ -26,7 +26,7 @@ function MyPatients() {
     }
 
     return (
-        <div className='col-span-12 md:col-span-11 h-screen p-8'>
+        <div className='col-span-12 md:col-span-11 h-screen md:p-4'>
             {/* Header */}
             <motion.div
                 initial={{ opacity: 0, y: 0 }}
@@ -34,7 +34,7 @@ function MyPatients() {
                 exit={{ opacity: 0, y: 0 }}
                 transition={{ duration: 1.5 }}
                 className='flex items-center h-20'>
-                <h1 className='text-xl ml-4 antialiased font-bold text-gray-dark md:text-4xl'>My Patients</h1>
+                <h1 className='text-xl ml-4 antialiased font-bold text-gray-dark md:text-3xl'>My Patients</h1>
             </motion.div>
 
             {/* Patients container */}
@@ -43,7 +43,7 @@ function MyPatients() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, y: 0 }}
                 transition={{ duration: 1 }}
-                className='flex items-center h-20 my-8 p-4'>
+                className='flex flex-wrap items-center h-20 p-4'>
 
                 {/* Patient Cards */}
                 {patients && patients.length > 0 ? (
