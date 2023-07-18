@@ -160,3 +160,13 @@ Si el usuario ya existe mostrar error usuario existente.
 ## - Login Validations 
 
     Tendria que redirigir al dashboard si tiene los reminders establecidos
+
+
+
+///Corporativa
+// Presentacion soy tal, estudie tal, experiencia en; y especializado. Venderme como front
+// En una eslide, problema y justificacion 
+//Tecnologias - logosy nombre - por que estas Tecnologias
+//Demostracion
+//Codigo - Graficas flujo
+//Futuras implementaciones
