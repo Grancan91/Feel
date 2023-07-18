@@ -31,7 +31,7 @@ export const loadRecords = async () => {
 export const loadPatientRecords = async () => {
     try {
         const patientId = localStorage.getItem("patient_id");
-        const { data } = await api.get(`/record/${patientId}`, {
+        const { data } = await api.get(`/record/average/${patientId}`, {
             headers: {
                 token: localStorage.getItem('token')
             }
@@ -46,8 +46,8 @@ export const loadPatientRecords = async () => {
 
 
 export const loadAverageEmotions = async () => {
+    console.log('loadaverageEmotions')
     try {
-        console.log('aqui')
         const { data } = await api.get('/record/average', {
             headers: {
                 token: localStorage.getItem('token')

@@ -44,7 +44,7 @@ function ProLogin() {
   return (
     <div className='w-screen h-screen flex flex-col justify-center items-center'>
       <div className='p-4 lg:w-3/5 md:p-8'>
-        <h1 className='text-2xl p-2 md:text-5xl md:p-8 text-center'>Welcome Back</h1>
+        <h1 className='text-xl p-4 md:text-2xl md:p-8 text-center'>Welcome Back</h1>
 
         <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
           {/* Column 1 */}
@@ -52,16 +52,16 @@ function ProLogin() {
           </div>
           {/* Column 2 */}
           <div className="border border-gray-light rounded-lg p-2 md:p-8">
-            <h2 className='text-center text-lg my-2 md:text-2xl'>Your Login Data</h2>
+            <h2 className='text-center text-lg my-2 md:text-xl'>Your Login Data</h2>
             <p className='text-center text-rose-600'>{`${errorLabel}`}</p>
             {/* Form */}
             <form action="" className=''>
-              <label htmlFor="" className='text-lg text-gray md:text-2xl antialiased'>{`${emailLabel}`}</label>
-              <input type="text" className={`w-full border border-gray-light p-2 md:p-4 rounded-md my-2`}
+              <label htmlFor="" className='text-sm text-gray md:text-lg antialiased'>{`${emailLabel}`}</label>
+              <input type="text" className={`w-full border border-gray-light p-1 md:p-2 rounded-md my-2`}
                 onChange={handleEmail} />
 
-              <label htmlFor="" className='text-lg text-gray md:text-2xl antialiased'>{`${passwordLabel}`}</label>
-              <input type="text" className={`w-full border border-gray-light p-2 md:p-4 rounded-md my-2`}
+              <label htmlFor="" className='text-sm text-gray md:text-lg antialiased'>{`${passwordLabel}`}</label>
+              <input type="password" className={`w-full border border-gray-light p-1 md:p-2 rounded-md my-2`}
                 onChange={handlePassword} />
             </form>
 

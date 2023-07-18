@@ -15,7 +15,7 @@ function Welcome() {
 
     {/* Title and Cards Container */}
       {/* Title */}
-      <h1 className="antialiased text-2xl text-center font-bold my-8 md:text-5xl lg:text-6xl">Key Features of the Application</h1>
+      <h1 className="antialiased text-2xl text-center font-bold mt-8 md:text-5xl lg:text-6xl">Key Features of the Application</h1>
 
         {/* Card Container */}
         <div className="grid grid-cols-1 gap-4 p-6 md:grid-cols-3 md:p-4 md:mx-8 lg:mx-32 text-center">
