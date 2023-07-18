@@ -45,20 +45,10 @@ function ProgressCard({ Title, TopList, Variant, Img }) {
                 </div>
 
 
-///Corporativa
-// Presentacion soy tal, estudie tal, experiencia en; y especializado. Venderme como front
-// En una eslide, problema y justificacion 
-//Tecnologias - logosy nombre - por que estas Tecnologias
-//Demostracion
-//Codigo - Graficas flujo
-//Futuras implementaciones
-
-
-
                 {/*Cards*/}
                 <div className='flex mt-4 justify-between'>
-                    <div className=''>{keys && keys.length > 0 ? keys[0] : 'Loading'}</div>
-                    <div>{values && values.length > 0 ? values[0] : 'Loading'}</div>
+                    <div className=''>{keys && keys.length > 0 ? keys[0] : 'There is no data to show'}</div>
+                    <div>{values && values.length > 0 ? values[0] : '0%'}</div>
                 </div>
                 <div className={`w-full h-3 bg-gray-300 rounded-full ${VARIANT[Variant]} mt-2`}>
                     <motion.div
@@ -72,8 +62,8 @@ function ProgressCard({ Title, TopList, Variant, Img }) {
                 </div>
                 {/*Cards*/}
                 <div className='flex mt-4 justify-between'>
-                    <div className=''>{keys && keys.length > 0 ? keys[1] : 'Loading'}</div>
-                    <div>{values && values.length > 0 ? values[1] : 'Loading'}</div>
+                    <div className=''>{keys && keys.length > 0 ? keys[1] : 'There is no data to show'}</div>
+                    <div>{values && values.length > 0 ? values[1] : '0%'}</div>
                 </div>
 
                 <div className={`w-full h-3 bg-gray-300 rounded-full ${VARIANT[Variant]} mt-2`}>
@@ -87,8 +77,8 @@ function ProgressCard({ Title, TopList, Variant, Img }) {
                 </div>
                 {/*Cards*/}
                 <div className='flex mt-4 justify-between'>
-                    <div className=''>{keys && keys.length > 0 ? keys[2] : 'Loading'}</div>
-                    <div>{values && values.length > 0 ? values[2] : 'Loading'}</div>
+                    <div className=''>{keys && keys.length > 0 ? keys[2] : 'There is no data to show'}</div>
+                    <div>{values && values.length > 0 ? values[2] : '0%'}</div>
                 </div>
                 <div className={`w-full h-3 bg-gray-300 rounded-full ${VARIANT[Variant]} mt-2`}>
                     <motion.div

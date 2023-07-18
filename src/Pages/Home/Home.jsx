@@ -17,6 +17,7 @@ function Home() {
     const loadData = async () => {
       const data = await loadAverageEmotions()
       setAverage(data)
+      console.log(data)
     }
     loadData()
   }, [])

@@ -10,18 +10,24 @@ function Intro2() {
     const handleMorning = () => {
         localStorage.setItem('reminder_time', '9:00')
         updateReminder(localStorage.getItem('reminder_freq'), localStorage.getItem('reminder_time'))
+        localStorage.removeItem('reminder_time')
+        localStorage.removeItem('reminder_freq')
         navigate('/dashboard/home')
     }
 
     const handleAfternoon = () => {
         localStorage.setItem('reminder_time', '15:00')
         updateReminder(localStorage.getItem('reminder_freq'), localStorage.getItem('reminder_time'))
+        localStorage.removeItem('reminder_time')
+        localStorage.removeItem('reminder_freq')
         navigate('/dashboard/home')
     }
 
     const handleNight = () => {
         localStorage.setItem('reminder_time', '21:00')
         updateReminder(localStorage.getItem('reminder_freq'), localStorage.getItem('reminder_time'))
+        localStorage.removeItem('reminder_time')
+        localStorage.removeItem('reminder_freq')
         navigate('/dashboard/home')
     }
     return (
