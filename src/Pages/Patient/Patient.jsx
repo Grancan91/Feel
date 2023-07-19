@@ -19,11 +19,12 @@ function Patient() {
         setShowPatient(true);
         const loadData = async () => {
             const data = await loadPatientRecords()
-            console.log('padre:', data)
+            
             setAverage(data)
         }
         loadData()
     }, [])
+    
 
 
 

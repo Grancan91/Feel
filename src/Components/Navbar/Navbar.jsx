@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 function Navbar({selected = 'Home'}) {
 
@@ -11,9 +11,10 @@ function Navbar({selected = 'Home'}) {
     const [record, setRecord] = useState('opacity-50')
     const [stats, setStats] = useState('opacity-50')
     const [diary, setDiary] = useState('opacity-50')
-    const [settings, setSettings] = useState('opacity-50')
+    const [settings, setSettings] = useState('opacity-100')
     const navigate = useNavigate()
     //const [changeListener, setChangeListener] = useState()
+
 
 
     //Pendiente capturar evento de cambio para establecer array de dependencia.
@@ -43,9 +44,10 @@ function Navbar({selected = 'Home'}) {
         navigate('/login')
     }
 
-    return (
+    return (   
 
-        <>
+            <>
+        
             <div className='flex bg-white md:rounded-tr-[30px] items-center md:flex-col md:h-screen md:w-32'>
 
                 {/*'App Icon'*/}
@@ -94,9 +96,10 @@ function Navbar({selected = 'Home'}) {
                 <div className='w-full h-full'></div>
                 {/*'Options Button'*/}
                 <div onClick={handleExit} className={`${settings} w-fit h-fit p-2 my-2 mx-2 md:w-fit md:p-14 md:mx-0 cursor-pointer`}>
-                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                    <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
+                        <path stroke="red" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 8h11m0 0-4-4m4 4-4 4m-5 3H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h3" />
                     </svg>
+                    <div className='text-xl my-2'>Exit</div>
                 </div>
             </div>
         </>
