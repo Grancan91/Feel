@@ -46,6 +46,7 @@ function Home() {
               {average && <ProgressCard
                 TopList={average.emotions}
                 Img={1}
+                Title={'Top Emotions'}
                 Variant={'bg-green'}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -57,6 +58,7 @@ function Home() {
                 {average && <ProgressCard
                   TopList={average.causes}
                   Img={2}
+                  Title={'Top Causes'}
                   Variant={'bg-red'}
                   initial={{ x: -100 }}
                   animate={{ x: 0 }}
@@ -68,6 +70,7 @@ function Home() {
               {average && <ProgressCard
                 TopList={average.strategies}
                 Img={3}
+                Title={'Top Strategies'}
                 Variant={'bg-blue-dark'}
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}

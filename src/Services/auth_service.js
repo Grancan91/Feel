@@ -25,8 +25,8 @@ export const userLogin = async (email, password) => {
     try {
         const { data } = await api.post('/auth/login', { email, password })
         localStorage.setItem('token', data.userDetails.token)
-        localStorage.setItem('name', data.userDetails.name)
-        localStorage.setItem('email', data.userDetails.email)
+       // localStorage.setItem('name', data.userDetails.name)
+        //localStorage.setItem('email', data.userDetails.email)
         localStorage.setItem('id', data.userDetails.id)
         localStorage.setItem('reminder_freq', data.userDetails.reminder_freq)
         return true

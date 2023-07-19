@@ -35,6 +35,7 @@ function Login() {
         setErrorLabel('')
         const hasReminder = localStorage.getItem('reminder_freq')
         if(hasReminder !== '0'){
+          localStorage.removeItem('reminder_freq')
           navigate('/dashboard/home')
         } else {
           navigate('/intro1')

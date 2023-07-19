@@ -38,7 +38,7 @@ function Record() {
                     exit={{ opacity: 0, y: -100 }}
                     transition={{ duration: 0.5 }}
                     className="w-full p-4">
-                    <ButtonCard Button_text='Create new record' Title_text='Crear nuevo registro de sentimientos' Detail_text='¡Comienza a registrar tus sentimientos y obtén una visión más profunda de tu mundo emocional!' Route={'/dashboard/NewRecord'} />
+                    <ButtonCard Button_text='Create new record' Detail_text="Start keeping track of your emotions and gain a deeper understanding of your emotional world!" Title_text='Create a new feelings log' Route={'/dashboard/NewRecord'} />
                 </motion.div>
                 {/*Container of Records*/}
                 <AnimatePresence>

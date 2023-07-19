@@ -16,8 +16,8 @@ function ProgressCard({ Title, TopList, Variant, Img }) {
         3:'https://em-content.zobj.net/thumbs/120/apple/354/memo_1f4dd.png'
     }
 
-    const [keys, setKeys] = useState();
-    const [values, setValues] = useState();
+    const [keys, setKeys] = useState([]);
+    const [values, setValues] = useState([]);
 
     useEffect(() => {
         if (TopList) {
@@ -32,7 +32,6 @@ function ProgressCard({ Title, TopList, Variant, Img }) {
     }, [keys, values]);
 
 
-
     return (
         <>
             {/*Cards*/}
@@ -41,11 +40,13 @@ function ProgressCard({ Title, TopList, Variant, Img }) {
                     <div className={`w-fit h-fit p-2 rounded-full ${VARIANT[Variant]}`}>
                         <img className='w-20' src={`${IMG[Img]}`} alt="" />
                     </div>
-                    <div className='mx-4 text-2xl font-semibold'>{Title}</div>
+                    <div className='mx-4 text-2xl font-semibold'>{keys[0] !== undefined ? Title : 'No Data to show'}</div>
                 </div>
 
 
                 {/*Cards*/}
+                {(keys[0] !== undefined) && (
+                    <>
                 <div className='flex mt-4 justify-between'>
                     <div className=''>{keys && keys.length > 0 ? keys[0] : 'There is no data to show'}</div>
                     <div>{values && values.length > 0 ? values[0] : '0%'}</div>
@@ -57,10 +58,14 @@ function ProgressCard({ Title, TopList, Variant, Img }) {
                         initial={{ width: '0%' }}
                         animate={{ width: `${values && values.length > 0 ? values[0] : '0%'}` }}
                         transition={{ duration: 1 }}
-                    ></motion.div>
+                        ></motion.div>
                     
                 </div>
+                        </>
+                )}
                 {/*Cards*/}
+                {(keys[1] !== undefined) && (
+                    <>
                 <div className='flex mt-4 justify-between'>
                     <div className=''>{keys && keys.length > 0 ? keys[1] : 'There is no data to show'}</div>
                     <div>{values && values.length > 0 ? values[1] : '0%'}</div>
@@ -75,20 +80,27 @@ function ProgressCard({ Title, TopList, Variant, Img }) {
                         transition={{ duration: 1 }}
                     ></motion.div>
                 </div>
+                </>
+)}
                 {/*Cards*/}
-                <div className='flex mt-4 justify-between'>
+                { (keys[2] !== undefined) && (
+                    <>
+                    <div className='flex mt-4 justify-between'>
                     <div className=''>{keys && keys.length > 0 ? keys[2] : 'There is no data to show'}</div>
                     <div>{values && values.length > 0 ? values[2] : '0%'}</div>
                 </div>
-                <div className={`w-full h-3 bg-gray-300 rounded-full ${VARIANT[Variant]} mt-2`}>
+
+<div className={`w-full h-3 bg-gray-300 rounded-full ${VARIANT[Variant]} mt-2`}>
                     <motion.div
                         className={`h-full ${Variant} rounded-full`}
                         style={{ width: '0%' }}
                         initial={{ width: '0%' }}
                         animate={{ width: `${values && values.length > 0 ? values[2] : '0%'}` }}
                         transition={{ duration: 1 }}
-                    ></motion.div>
+                        ></motion.div>
                 </div>
+                        </>
+                        )}
 
             </div>
 
